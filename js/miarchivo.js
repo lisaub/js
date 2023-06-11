@@ -17,16 +17,33 @@ function calcularCuota() {
   let mes = 1;
   let montoRestante = montoPrestamo;
 
+  const detallesCuotas = []; 
+
   while (mes <= meses) {
     const interesMensual = montoRestante * tasaInteresMensual;
     const capitalMensual = cuotaMensual - interesMensual;
     
     montoRestante -= capitalMensual;
     
-    console.log("Mes " + mes + ": Cuota: $" + cuotaMensual.toFixed(2) + " - Interés: $" + interesMensual.toFixed(2) + " - Capital: $" + capitalMensual.toFixed(2) + " - Monto Restante: $" + montoRestante.toFixed(2));
+    const detalleCuota = {
+      mes: mes,
+      cuota: cuotaMensual.toFixed(2),
+      interes: interesMensual.toFixed(2),
+      capital: capitalMensual.toFixed(2),
+      montoRestante: montoRestante.toFixed(2)
+    };
+
+    detallesCuotas.push(detalleCuota); 
+
+    console.log("Mes " + mes + ": Cuota: $" + detalleCuota.cuota + " - Interés: $" + detalleCuota.interes + " - Capital: $" + detalleCuota.capital + " - Monto Restante: $" + detalleCuota.montoRestante);
 
     mes++;
   }
+
+  console.log("Detalles de las cuotas:", detallesCuotas);
+  console.table(detallesCuotas);
 }
 
 console.log("Para usar la Calculadora de Préstamos, por favor llama a la función 'calcularCuota()'.");
+
+calcularCuota()
