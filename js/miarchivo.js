@@ -1,23 +1,25 @@
 // Calcular cuota mensual
+
+const detallesCuotas = []; 
+
 function calcularCuota() {
   const montoPrestamo = parseFloat(prompt("Ingresa el monto del préstamo:"));
   const meses = parseInt(prompt("Ingresa el número de meses:"));
+  const tasaInteres = parseFloat(prompt("Ingresa la tasa de interés (porcentaje):"));
 
-  if (isNaN(montoPrestamo) || isNaN(meses) || montoPrestamo <= 0 || meses <= 0) {
+  if (isNaN(montoPrestamo) || isNaN(meses) || montoPrestamo <= 0 || meses <= 0 || isNaN(tasaInteres)) {
     console.warn("Entrada inválida. Por favor, ingresa números válidos.");
+    alert("Entrada inválida. Por favor, ingresa números válidos.");
     return;
   }
 
-  const tasaInteres = 0.05;
-  const tasaInteresMensual = tasaInteres / 12;
+  const tasaInteresMensual = tasaInteres / (100 * 12);
 
   const cuotaMensual = montoPrestamo * (tasaInteresMensual / (1 - Math.pow(1 + tasaInteresMensual, -meses)));
 
   console.log("Cuotas Mensuales:");
   let mes = 1;
   let montoRestante = montoPrestamo;
-
-  const detallesCuotas = []; 
 
   while (mes <= meses) {
     const interesMensual = montoRestante * tasaInteresMensual;
@@ -44,6 +46,19 @@ function calcularCuota() {
   console.table(detallesCuotas);
 }
 
+// Filtrar detalles de las cuotas por mes
+function filtrarPorMes(mes) {
+  const detallesFiltrados = detallesCuotas.filter(detalle => detalle.mes === mes);
+
+  if (detallesFiltrados.length > 0) {
+    console.log("Detalles de las cuotas para el mes " + mes + ":");
+    console.table(detallesFiltrados, ["cuota", "interes", "capital", "montoRestante"]);
+  } else {
+    console.log("No se encontró ningún detalle para el mes " + mes + ".");
+  }
+}
+
 console.log("Para usar la Calculadora de Préstamos, por favor llama a la función 'calcularCuota()'.");
+console.log("También puedes utilizar la función 'filtrarPorMes(mes)' para filtrar los detalles de las cuotas por mes.");
 
 calcularCuota()
