@@ -6,14 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Préstamos</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/miarchivo.js"></script>
+    <script src="js/variables.js"></script>
+    <script defer src="js/index.js"></script>
 </head>
 <body>
     <h1>Calculadora de Préstamos</h1>
-    <p>Esta calculadora determina la cuota mensual de un préstamo basándose en el monto del préstamo, la tasa de interés fija y el número de meses.</p>
-    <p>Para usar la Calculadora de Préstamos, abre las herramientas de desarrollo del navegador y escribe la función 'calcularCuota()' en la consola.</p>
-    <p>También puedes utilizar la función 'filtrarPorMes(mes)' en la consola para filtrar los detalles de las cuotas por mes.</p>
+    <p>Esta calculadora determina la cuota mensual de un préstamo basándose en el monto del préstamo, la tasa de interés fija y el número de meses (hasta 60).</p>
+    <p>Para usar la Calculadora de Préstamos, puedes completar el formulario a continuación.</p>
+    <p>También puedes filtrar los detalles de las cuotas por mes.</p>
+    <br>
+    <form id="formulario">
+        <div class="inputEstilo">
+          <label for="montoPrestamo">Monto del préstamo:</label>
+          <input type="number" id="montoPrestamo" name="montoPrestamo" required>
+        </div>
+        <div class="inputEstilo">
+          <label for="meses">Número de meses (hasta 60):</label>
+          <input type="number" id="meses" name="meses" required>
+        </div>
+        <div class="inputEstilo">
+          <label for="tasaInteres">Tasa de interés (porcentaje):</label>
+          <input type="number" id="tasaInteres" name="tasaInteres" required>
+        </div>
+        <div class="inputEstilo">
+          <label for="descripcion">¿Para qué es este préstamo?</label>
+          <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+        <button type="submit" class="botonEstilo">Calcular</button>
+        <button type="button" class="botonEstilo" onclick="clearForm()">Clear Form</button>
+        <button type="button" class="botonEstilo" onclick="mostrarUltimosDatos()">Mostrar Última Cuota</button>
+        <button type="button" class="botonEstilo" onclick="mostrarTodosLosPrestamos()">Todos Los Préstamos</button>
+        <br>
+        <label for="filtroMes">Filtrar por Mes:</label>
+        <input type="number" id="filtroMes" name="filtroMes" oninput="filtrarTablasPorMes()">
+      </form>
 </body>
 </html>
-
-<!-- <div id="resultContainer"></div> -->
