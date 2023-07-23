@@ -5,6 +5,7 @@ function clearForm() {
     document.getElementById("montoPrestamo").value = "";
     document.getElementById("meses").value = "";
     document.getElementById("tasaInteres").value = "";
+    document.getElementById("fechaInicio").value = "";
     document.getElementById("descripcion").value = "";
     document.getElementById("filtroMes").value = "";
     clearTable()

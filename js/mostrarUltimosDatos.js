@@ -6,10 +6,14 @@ function mostrarUltimosDatos() {
   const montoPrestamo = localStorage.getItem("montoPrestamo");
   const meses = localStorage.getItem("meses");
   const tasaInteres = localStorage.getItem("tasaInteres");
+  const fechaActual = localStorage.getItem("fechaActual");
+  const fechaActualDate = new Date(fechaActual);
+  const fechaInicioValue = fechaActualDate.toISOString().split('T')[0];
   const descripcion = localStorage.getItem("descripcion");
   document.getElementById("montoPrestamo").value = montoPrestamo;
   document.getElementById("meses").value = meses;
   document.getElementById("tasaInteres").value = tasaInteres;
+  document.getElementById("fechaInicio").value = fechaInicioValue;
   document.getElementById("descripcion").value = descripcion;
   clearTable()
   if (!detallesCuotas || detallesCuotas.length === 0) {
@@ -26,9 +30,7 @@ function mostrarUltimosDatos() {
   document.body.insertAdjacentHTML("beforeend", table);
 }
 
-
 const boton = document.querySelector("#mostrarUltimo");
 boton.addEventListener("click", mostrarUltimosDatos);
-
 
 export { mostrarUltimosDatos };

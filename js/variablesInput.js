@@ -1,8 +1,9 @@
-export function getInputValues() {
+export const getInputValues = () => {
     return {
+        fechaActual: document.getElementById("fechaInicio").value,
         montoPrestamo: parseFloat(document.getElementById("montoPrestamo").value),
         meses: parseInt(document.getElementById("meses").value),
-        tasaInteres: parseFloat(document.getElementById("tasaInteres").value),
+        tasaInteres: parseFloat(document.getElementById("tasaInteres").value) || 5,
         descripcion: document.getElementById("descripcion").value
     };
 }

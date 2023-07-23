@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-  }
+    background: #a5d6a7;
+}
   
 h1 {
   color: #333;
@@ -11,8 +12,39 @@ p {
   color: #666;
 }
 
+.formContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#formulario {
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+
 .inputEstilo {
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a5d6a7;
+}
+
+.inputEstilo input[type="text"],
+.inputEstilo input[type="number"],
+.inputEstilo input[type="date"] {
+  background-color: #a5d6a7;
+}
+
+
+.botonesDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .botonEstilo {
@@ -25,8 +57,18 @@ p {
   display: inline-block;
   font-size: 16px;
   margin-bottom: 10px;
+  margin-right: 10px;
 }
-  
+
+.inputFields {
+  background-color: white;
+  border: 2px solid #4caf50;
+  color: #4caf50;
+  padding: 4px 10px;
+  text-align: center;
+  font-size: 16px;
+}
+ 
 .tablaEstiloColumnas {
   border: 1px solid #ddd;
   padding: 8px;
