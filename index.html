@@ -7,7 +7,11 @@
     <title>Calculadora de Préstamos</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/variables.js"></script>
-    <script defer src="js/index.js"></script>
+    <script type="module" src="js/clearForm.js"></script>
+    <script type="module" src="js/mostrarUltimosDatos.js"></script>
+    <script type="module" src="js/mostrarTodosLosPrestamos.js"></script>
+    <script type="module" src="js/filtrarTablasPorMes.js"></script>
+    <script defer type="module" src="js/index.js"></script>
 </head>
 <body>
     <h1>Calculadora de Préstamos</h1>
@@ -33,12 +37,12 @@
           <input type="text" id="descripcion" name="descripcion" required>
         </div>
         <button type="submit" class="botonEstilo">Calcular</button>
-        <button type="button" class="botonEstilo" onclick="clearForm()">Clear Form</button>
-        <button type="button" class="botonEstilo" onclick="mostrarUltimosDatos()">Mostrar Última Cuota</button>
-        <button type="button" class="botonEstilo" onclick="mostrarTodosLosPrestamos()">Todos Los Préstamos</button>
+        <button type="button" class="botonEstilo" id="borrarForm">Clear Form</button>
+        <button type="button" class="botonEstilo" id="mostrarUltimo">Mostrar Última Cuota</button>
+        <button type="button" class="botonEstilo" id="mostrarTodo">Todos Los Préstamos</button>
         <br>
         <label for="filtroMes">Filtrar por Mes:</label>
-        <input type="number" id="filtroMes" name="filtroMes" oninput="filtrarTablasPorMes()">
+        <input type="number" id="filtroMes" name="filtroMes">
       </form>
 </body>
 </html>
