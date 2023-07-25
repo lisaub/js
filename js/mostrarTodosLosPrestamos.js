@@ -1,9 +1,10 @@
 import { clearTable } from './clearTable.js';
+import {ohNo} from './sweetAlert.js';
 
 function mostrarTodosLosPrestamos() {
   if (!cuotasGuardadas || cuotasGuardadas.length === 0) {
     console.warn("No hay préstamos guardados.");
-    alert("No hay préstamos guardados.");
+    ohNo();
     return;
   }
   clearTable()

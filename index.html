@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Préstamos</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/variables.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js
+    "></script>
+    <script defer src="js/variables.js"></script>
+    <script defer src="js/bbdd.js"></script>
+    <script type="module" src="js/cargarEjemplo.js"></script>
     <script type="module" src="js/clearForm.js"></script>
     <script type="module" src="js/mostrarUltimosDatos.js"></script>
     <script type="module" src="js/mostrarTodosLosPrestamos.js"></script>
     <script type="module" src="js/filtrarTablasPorMes.js"></script>
     <script defer type="module" src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <h1>Calculadora de Préstamos</h1>
@@ -42,10 +48,11 @@
           <input type="text" id="descripcion" class="inputFields" name="descripcion" required>
         </div>
         <div class="botonesDiv">
-          <button type="submit" class="botonEstilo">Calcular</button>
+          <button type="submit" class="botonEstilo" id="calcular">Calcular</button>
           <button type="button" class="botonEstilo" id="borrarForm">Clear Form</button>
           <button type="button" class="botonEstilo" id="mostrarUltimo">Mostrar Última Cuota</button>
           <button type="button" class="botonEstilo" id="mostrarTodo">Todos Los Préstamos</button>
+          <button type="button" class="botonEstilo" id="ejemplo">Ejemplo</button>
         </div>
         <div class="inputEstilo">
           <label for="filtroMes">Filtrar por Mes:</label>
