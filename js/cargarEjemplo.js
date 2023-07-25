@@ -17,6 +17,11 @@ function cargarEjemplo() {
 
 
 function renderizarTabla(datos) {
+    document.getElementById("montoPrestamo").value = 1000;
+    document.getElementById("meses").value = 10;
+    document.getElementById("tasaInteres").value = 10;
+    document.getElementById("fechaInicio").value = "2023-08-06";
+    document.getElementById("descripcion").value = "Ejemplo";
     const numColumns = Object.keys(datos[0]).length;
     const tableRows = datos.map((data) => {
       return `<tr><td class="tablaEstiloDatos">${data.mes}</td><td class="tablaEstiloDatos">${data.fecha}</td><td class="tablaEstiloDatos">${data.cuota}</td><td class="tablaEstiloDatos">${data.interes}</td><td class="tablaEstiloDatos">${data.capital}</td><td class="tablaEstiloDatos">${data.montoRestante}</td></tr>`;
