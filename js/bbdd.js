@@ -8,3 +8,6 @@ const BBDD = [{mes: 1, fecha: "6.9.2023", cuota: "104.64", interes: "8.33", capi
 {mes: 8, fecha: "6.4.2024", cuota: "104.64", interes: "2.57", capital: "102.07", montoRestante: "206.69"},
 {mes: 9, fecha: "6.5.2024", cuota: "104.64", interes: "1.72", capital: "102.92", montoRestante: "103.77"},
 {mes: 10, fecha: "6.6.2024", cuota: "104.64", interes: "0.86", capital: "103.78", montoRestante: "-0.00"}]
+
+
+const URLremote= "https://64c03f520d8e251fd112063c.mockapi.io/BBDD";

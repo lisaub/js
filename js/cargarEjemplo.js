@@ -1,7 +1,5 @@
 import { clearTable } from './clearTable.js';
-import {ohNo} from './sweetAlert.js';
 
-// Mostrar Ejemplo
 function cargarEjemplo() {
   clearTable()
   const timer = parseInt(Math.random() * 1000);
@@ -14,7 +12,6 @@ function cargarEjemplo() {
     }, timer);
     })
 }
-
 
 function renderizarTabla(datos) {
     document.getElementById("montoPrestamo").value = 1000;
@@ -31,8 +28,6 @@ function renderizarTabla(datos) {
     document.body.insertAdjacentHTML("beforeend", table);
 }
 
-
-
 const botonEjemplo = document.querySelector("#ejemplo");
 botonEjemplo.addEventListener("click", () => {
     cargarEjemplo()
@@ -40,4 +35,18 @@ botonEjemplo.addEventListener("click", () => {
     .catch((error)=>console.error(error));
 });
 
-export { cargarEjemplo };
+function cargarEjemplo2() {
+    clearTable();
+    return fetch(URLremote)
+      .then((response) => response.json())
+      .catch((error) => console.error(error));
+}
+
+const botonEjemplo2 = document.querySelector("#ejemplo2");
+botonEjemplo2.addEventListener("click", () => {
+  cargarEjemplo()
+    .then((datos) => renderizarTabla(datos))
+    .catch((error) => console.error(error));
+});
+
+export { cargarEjemplo , cargarEjemplo2 };
